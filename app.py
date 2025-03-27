@@ -36,8 +36,19 @@ def index():
         # Generate email content using Groq API
         try:
             response = client.chat.completions.create(
-                messages=[{"role": "user", "content": prompt}],
-                model="llama-3.3-70b-versatile",
+            messages=[
+                {
+                    "role": "system",
+                    "content": f"You are an AI email assistant. Generate a professional email for {recipient} based on the user's prompt. Provide a clear, concise, and appropriate email."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            model="llama3-70b-8192",
+            temperature=0.7,
+            max_tokens=500
             )
             generated_email = response.choices[0].message.content
         except Exception as e:
