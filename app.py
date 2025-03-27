@@ -39,7 +39,7 @@ def index():
             messages=[
                 {
                     "role": "system",
-                    "content": f"You are an AI email assistant. Generate a professional email for {recipient} based on the user's prompt. Provide a clear, concise, and appropriate email."
+                    "content": f"You are an AI email assistant. Generate a professional email for 'Rishav Raj' based on the user's prompt. Provide a clear, concise, and appropriate email."
                 },
                 {
                     "role": "user",
