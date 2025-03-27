@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-2xl font-semibold mb-6">Edit Your Email</h2>
+    
+    <form method="POST" action="{{ url_for('send_email') }}" class="space-y-4">
+        <input type="hidden" name="recipient" value="{{ recipient }}">
+        <input type="hidden" name="subject" value="{{ subject }}">
+
+        <div>
+            <label class="block text-sm font-medium mb-1">Email Content</label>
+            <textarea name="email_content" id="email_content" rows="12"
+                      class="input-field font-mono">{{ email_content }}</textarea>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <a href="{{ url_for('index') }}" class="text-gray-600 hover:text-indigo-600">
+                ← Go Back
+            </a>
+            <button type="submit" class="btn-primary">
+                Send Email 📨
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

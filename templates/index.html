@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-2xl font-semibold mb-6">Compose New Email</h2>
+    
+    <form method="POST" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium mb-1">Recipient Email</label>
+            <input type="email" name="recipient" required
+                   class="input-field">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1">Subject</label>
+            <input type="text" name="subject"
+                   class="input-field">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1">Email Prompt</label>
+            <textarea name="prompt" rows="4" required
+                      class="input-field"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+            Generate Email ✨
+        </button>
+    </form>
+</div>
+{% endblock %}
